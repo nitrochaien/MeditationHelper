@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED9371C21F26D6A000615D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C11F26D6A000615D20 /* AppDelegate.swift */; };
+		ED9371C41F26D6A000615D20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C31F26D6A000615D20 /* ViewController.swift */; };
+		ED9371C71F26D6A000615D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9371C51F26D6A000615D20 /* Main.storyboard */; };
+		ED9371CA1F26D6A000615D20 /* MeditationHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C81F26D6A000615D20 /* MeditationHelper.xcdatamodeld */; };
+		ED9371CC1F26D6A000615D20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9371CB1F26D6A000615D20 /* Assets.xcassets */; };
+		ED9371CF1F26D6A000615D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9371CD1F26D6A000615D20 /* LaunchScreen.storyboard */; };
+		ED9371DA1F26D6A000615D20 /* MeditationHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371D91F26D6A000615D20 /* MeditationHelperTests.swift */; };
+		ED9371E51F26D6A000615D20 /* MeditationHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371E41F26D6A000615D20 /* MeditationHelperUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED9371D61F26D6A000615D20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED9371B61F26D6A000615D20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED9371BD1F26D6A000615D20;
+			remoteInfo = MeditationHelper;
+		};
+		ED9371E11F26D6A000615D20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED9371B61F26D6A000615D20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED9371BD1F26D6A000615D20;
+			remoteInfo = MeditationHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED9371BE1F26D6A000615D20 /* MeditationHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9371C11F26D6A000615D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED9371C31F26D6A000615D20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED9371C61F26D6A000615D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED9371C91F26D6A000615D20 /* MeditationHelper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeditationHelper.xcdatamodel; sourceTree = "<group>"; };
+		ED9371CB1F26D6A000615D20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED9371CE1F26D6A000615D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED9371D01F26D6A000615D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED9371D51F26D6A000615D20 /* MeditationHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9371D91F26D6A000615D20 /* MeditationHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationHelperTests.swift; sourceTree = "<group>"; };
+		ED9371DB1F26D6A000615D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED9371E01F26D6A000615D20 /* MeditationHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9371E41F26D6A000615D20 /* MeditationHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationHelperUITests.swift; sourceTree = "<group>"; };
+		ED9371E61F26D6A000615D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED9371BB1F26D6A000615D20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9371D21F26D6A000615D20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9371DD1F26D6A000615D20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED9371B51F26D6A000615D20 = {
+			isa = PBXGroup;
+			children = (
+				ED9371C01F26D6A000615D20 /* MeditationHelper */,
+				ED9371D81F26D6A000615D20 /* MeditationHelperTests */,
+				ED9371E31F26D6A000615D20 /* MeditationHelperUITests */,
+				ED9371BF1F26D6A000615D20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED9371BF1F26D6A000615D20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED9371BE1F26D6A000615D20 /* MeditationHelper.app */,
+				ED9371D51F26D6A000615D20 /* MeditationHelperTests.xctest */,
+				ED9371E01F26D6A000615D20 /* MeditationHelperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED9371C01F26D6A000615D20 /* MeditationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				ED9371C11F26D6A000615D20 /* AppDelegate.swift */,
+				ED9371C31F26D6A000615D20 /* ViewController.swift */,
+				ED9371C51F26D6A000615D20 /* Main.storyboard */,
+				ED9371CB1F26D6A000615D20 /* Assets.xcassets */,
+				ED9371CD1F26D6A000615D20 /* LaunchScreen.storyboard */,
+				ED9371D01F26D6A000615D20 /* Info.plist */,
+				ED9371C81F26D6A000615D20 /* MeditationHelper.xcdatamodeld */,
+			);
+			path = MeditationHelper;
+			sourceTree = "<group>";
+		};
+		ED9371D81F26D6A000615D20 /* MeditationHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED9371D91F26D6A000615D20 /* MeditationHelperTests.swift */,
+				ED9371DB1F26D6A000615D20 /* Info.plist */,
+			);
+			path = MeditationHelperTests;
+			sourceTree = "<group>";
+		};
+		ED9371E31F26D6A000615D20 /* MeditationHelperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ED9371E41F26D6A000615D20 /* MeditationHelperUITests.swift */,
+				ED9371E61F26D6A000615D20 /* Info.plist */,
+			);
+			path = MeditationHelperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED9371BD1F26D6A000615D20 /* MeditationHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED9371E91F26D6A000615D20 /* Build configuration list for PBXNativeTarget "MeditationHelper" */;
+			buildPhases = (
+				ED9371BA1F26D6A000615D20 /* Sources */,
+				ED9371BB1F26D6A000615D20 /* Frameworks */,
+				ED9371BC1F26D6A000615D20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeditationHelper;
+			productName = MeditationHelper;
+			productReference = ED9371BE1F26D6A000615D20 /* MeditationHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED9371D41F26D6A000615D20 /* MeditationHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED9371EC1F26D6A000615D20 /* Build configuration list for PBXNativeTarget "MeditationHelperTests" */;
+			buildPhases = (
+				ED9371D11F26D6A000615D20 /* Sources */,
+				ED9371D21F26D6A000615D20 /* Frameworks */,
+				ED9371D31F26D6A000615D20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED9371D71F26D6A000615D20 /* PBXTargetDependency */,
+			);
+			name = MeditationHelperTests;
+			productName = MeditationHelperTests;
+			productReference = ED9371D51F26D6A000615D20 /* MeditationHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED9371DF1F26D6A000615D20 /* MeditationHelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED9371EF1F26D6A000615D20 /* Build configuration list for PBXNativeTarget "MeditationHelperUITests" */;
+			buildPhases = (
+				ED9371DC1F26D6A000615D20 /* Sources */,
+				ED9371DD1F26D6A000615D20 /* Frameworks */,
+				ED9371DE1F26D6A000615D20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED9371E21F26D6A000615D20 /* PBXTargetDependency */,
+			);
+			name = MeditationHelperUITests;
+			productName = MeditationHelperUITests;
+			productReference = ED9371E01F26D6A000615D20 /* MeditationHelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED9371B61F26D6A000615D20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = NamDV;
+				TargetAttributes = {
+					ED9371BD1F26D6A000615D20 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
+					ED9371D41F26D6A000615D20 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED9371BD1F26D6A000615D20;
+					};
+					ED9371DF1F26D6A000615D20 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED9371BD1F26D6A000615D20;
+					};
+				};
+			};
+			buildConfigurationList = ED9371B91F26D6A000615D20 /* Build configuration list for PBXProject "MeditationHelper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED9371B51F26D6A000615D20;
+			productRefGroup = ED9371BF1F26D6A000615D20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED9371BD1F26D6A000615D20 /* MeditationHelper */,
+				ED9371D41F26D6A000615D20 /* MeditationHelperTests */,
+				ED9371DF1F26D6A000615D20 /* MeditationHelperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED9371BC1F26D6A000615D20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9371CF1F26D6A000615D20 /* LaunchScreen.storyboard in Resources */,
+				ED9371CC1F26D6A000615D20 /* Assets.xcassets in Resources */,
+				ED9371C71F26D6A000615D20 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9371D31F26D6A000615D20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9371DE1F26D6A000615D20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED9371BA1F26D6A000615D20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9371C41F26D6A000615D20 /* ViewController.swift in Sources */,
+				ED9371C21F26D6A000615D20 /* AppDelegate.swift in Sources */,
+				ED9371CA1F26D6A000615D20 /* MeditationHelper.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9371D11F26D6A000615D20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9371DA1F26D6A000615D20 /* MeditationHelperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9371DC1F26D6A000615D20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9371E51F26D6A000615D20 /* MeditationHelperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED9371D71F26D6A000615D20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED9371BD1F26D6A000615D20 /* MeditationHelper */;
+			targetProxy = ED9371D61F26D6A000615D20 /* PBXContainerItemProxy */;
+		};
+		ED9371E21F26D6A000615D20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED9371BD1F26D6A000615D20 /* MeditationHelper */;
+			targetProxy = ED9371E11F26D6A000615D20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED9371C51F26D6A000615D20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED9371C61F26D6A000615D20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED9371CD1F26D6A000615D20 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED9371CE1F26D6A000615D20 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED9371E71F26D6A000615D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED9371E81F26D6A000615D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED9371EA1F26D6A000615D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MeditationHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.namdv.MeditationHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ED9371EB1F26D6A000615D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MeditationHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.namdv.MeditationHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		ED9371ED1F26D6A000615D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MeditationHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.namdv.MeditationHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeditationHelper.app/MeditationHelper";
+			};
+			name = Debug;
+		};
+		ED9371EE1F26D6A000615D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MeditationHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.namdv.MeditationHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeditationHelper.app/MeditationHelper";
+			};
+			name = Release;
+		};
+		ED9371F01F26D6A000615D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MeditationHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.namdv.MeditationHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MeditationHelper;
+			};
+			name = Debug;
+		};
+		ED9371F11F26D6A000615D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MeditationHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.namdv.MeditationHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MeditationHelper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED9371B91F26D6A000615D20 /* Build configuration list for PBXProject "MeditationHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED9371E71F26D6A000615D20 /* Debug */,
+				ED9371E81F26D6A000615D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED9371E91F26D6A000615D20 /* Build configuration list for PBXNativeTarget "MeditationHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED9371EA1F26D6A000615D20 /* Debug */,
+				ED9371EB1F26D6A000615D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED9371EC1F26D6A000615D20 /* Build configuration list for PBXNativeTarget "MeditationHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED9371ED1F26D6A000615D20 /* Debug */,
+				ED9371EE1F26D6A000615D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED9371EF1F26D6A000615D20 /* Build configuration list for PBXNativeTarget "MeditationHelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED9371F01F26D6A000615D20 /* Debug */,
+				ED9371F11F26D6A000615D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ED9371C81F26D6A000615D20 /* MeditationHelper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ED9371C91F26D6A000615D20 /* MeditationHelper.xcdatamodel */,
+			);
+			currentVersion = ED9371C91F26D6A000615D20 /* MeditationHelper.xcdatamodel */;
+			path = MeditationHelper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ED9371B61F26D6A000615D20 /* Project object */;
+}
