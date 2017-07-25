@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		ED9371C21F26D6A000615D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C11F26D6A000615D20 /* AppDelegate.swift */; };
-		ED9371C41F26D6A000615D20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C31F26D6A000615D20 /* ViewController.swift */; };
 		ED9371C71F26D6A000615D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9371C51F26D6A000615D20 /* Main.storyboard */; };
 		ED9371CA1F26D6A000615D20 /* MeditationHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C81F26D6A000615D20 /* MeditationHelper.xcdatamodeld */; };
 		ED9371CC1F26D6A000615D20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9371CB1F26D6A000615D20 /* Assets.xcassets */; };
 		ED9371CF1F26D6A000615D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9371CD1F26D6A000615D20 /* LaunchScreen.storyboard */; };
 		ED9371DA1F26D6A000615D20 /* MeditationHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371D91F26D6A000615D20 /* MeditationHelperTests.swift */; };
 		ED9371E51F26D6A000615D20 /* MeditationHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371E41F26D6A000615D20 /* MeditationHelperUITests.swift */; };
+		ED9371F81F26D76500615D20 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371F51F26D76500615D20 /* ClockViewController.swift */; };
+		ED9371FA1F26DA2000615D20 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371F91F26DA2000615D20 /* CircleView.swift */; };
+		ED9371FC1F26DB1B00615D20 /* clockticking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED9371FB1F26DB1B00615D20 /* clockticking.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 /* Begin PBXFileReference section */
 		ED9371BE1F26D6A000615D20 /* MeditationHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9371C11F26D6A000615D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED9371C31F26D6A000615D20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED9371C61F26D6A000615D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED9371C91F26D6A000615D20 /* MeditationHelper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeditationHelper.xcdatamodel; sourceTree = "<group>"; };
 		ED9371CB1F26D6A000615D20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		ED9371E01F26D6A000615D20 /* MeditationHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9371E41F26D6A000615D20 /* MeditationHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationHelperUITests.swift; sourceTree = "<group>"; };
 		ED9371E61F26D6A000615D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED9371F51F26D76500615D20 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
+		ED9371F91F26DA2000615D20 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		ED9371FB1F26DB1B00615D20 /* clockticking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clockticking.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +103,11 @@
 		ED9371C01F26D6A000615D20 /* MeditationHelper */ = {
 			isa = PBXGroup;
 			children = (
+				ED9371FB1F26DB1B00615D20 /* clockticking.mp3 */,
+				ED9371F41F26D76500615D20 /* Controllers */,
+				ED9371F61F26D76500615D20 /* Models */,
+				ED9371F71F26D76500615D20 /* Views */,
 				ED9371C11F26D6A000615D20 /* AppDelegate.swift */,
-				ED9371C31F26D6A000615D20 /* ViewController.swift */,
 				ED9371C51F26D6A000615D20 /* Main.storyboard */,
 				ED9371CB1F26D6A000615D20 /* Assets.xcassets */,
 				ED9371CD1F26D6A000615D20 /* LaunchScreen.storyboard */,
@@ -126,6 +133,29 @@
 				ED9371E61F26D6A000615D20 /* Info.plist */,
 			);
 			path = MeditationHelperUITests;
+			sourceTree = "<group>";
+		};
+		ED9371F41F26D76500615D20 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED9371F51F26D76500615D20 /* ClockViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ED9371F61F26D76500615D20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED9371F71F26D76500615D20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED9371F91F26DA2000615D20 /* CircleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +268,7 @@
 				ED9371CF1F26D6A000615D20 /* LaunchScreen.storyboard in Resources */,
 				ED9371CC1F26D6A000615D20 /* Assets.xcassets in Resources */,
 				ED9371C71F26D6A000615D20 /* Main.storyboard in Resources */,
+				ED9371FC1F26DB1B00615D20 /* clockticking.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +293,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED9371C41F26D6A000615D20 /* ViewController.swift in Sources */,
+				ED9371FA1F26DA2000615D20 /* CircleView.swift in Sources */,
+				ED9371F81F26D76500615D20 /* ClockViewController.swift in Sources */,
 				ED9371C21F26D6A000615D20 /* AppDelegate.swift in Sources */,
 				ED9371CA1F26D6A000615D20 /* MeditationHelper.xcdatamodeld in Sources */,
 			);

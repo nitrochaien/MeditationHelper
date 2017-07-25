@@ -1,24 +1,70 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Clock View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
+                <viewController storyboardIdentifier="ClockViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ClockViewController" customModule="MeditationHelper" customModuleProvider="target" sceneMemberID="viewController">
+<layoutGuides>
+<viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+<viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+</layoutGuides>
+<view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<subviews>
+<view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Nt-A3-6Zz">
+<rect key="frame" x="24" y="170" width="327" height="327"/>
+<color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+<constraints>
+<constraint firstAttribute="width" secondItem="9Nt-A3-6Zz" secondAttribute="height" multiplier="1:1" id="cmT-uf-LeO"/>
+</constraints>
+</view>
+<button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-NY-4Q4">
+<rect key="frame" x="164" y="90" width="46" height="30"/>
+<state key="normal" title="Button">
+<color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</state>
+<connections>
+<action selector="onClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K4W-rX-aX3"/>
+</connections>
+</button>
+<label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yab-0J-Bcl">
+<rect key="frame" x="24" y="513" width="327" height="94"/>
+<fontDescription key="fontDescription" type="system" pointSize="17"/>
+<color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+<nil key="highlightedColor"/>
+</label>
+</subviews>
+<color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<constraints>
+<constraint firstAttribute="trailingMargin" secondItem="yab-0J-Bcl" secondAttribute="trailing" constant="8" id="5ah-ZY-Qga"/>
+<constraint firstItem="9Nt-A3-6Zz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7Ve-Kg-yoS"/>
+<constraint firstAttribute="trailingMargin" secondItem="9Nt-A3-6Zz" secondAttribute="trailing" constant="8" id="8Rp-jb-pzj"/>
+<constraint firstItem="yab-0J-Bcl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="Cqk-we-Rzg"/>
+<constraint firstItem="9UU-NY-4Q4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MIs-zW-qsL"/>
+<constraint firstItem="9UU-NY-4Q4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="SU4-Xu-ilB"/>
+<constraint firstItem="yab-0J-Bcl" firstAttribute="top" secondItem="9Nt-A3-6Zz" secondAttribute="bottom" constant="16" id="TxO-L2-ROb"/>
+<constraint firstItem="9Nt-A3-6Zz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="gJy-5M-3X3"/>
+<constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yab-0J-Bcl" secondAttribute="bottom" constant="16" id="nJR-B5-tkb"/>
+</constraints>
+</view>
+<toolbarItems/>
+<simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+<connections>
+<outlet property="button" destination="9UU-NY-4Q4" id="BKj-pe-KZP"/>
+<outlet property="circleView" destination="9Nt-A3-6Zz" id="ujG-i1-H56"/>
+<outlet property="contentView" destination="9Nt-A3-6Zz" id="XFu-VD-Hxg"/>
+<outlet property="labelTime" destination="yab-0J-Bcl" id="cV2-P5-DJq"/>
+</connections>                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
