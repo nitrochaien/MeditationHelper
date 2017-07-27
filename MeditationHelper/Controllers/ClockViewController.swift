@@ -34,6 +34,11 @@ class ClockViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(removeView), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+    }
+    
     @IBAction func onClick(_ sender: Any) {
         //is running
         if isRunning {
@@ -44,6 +49,7 @@ class ClockViewController: UIViewController {
         } else {
             button.setTitle("Stop", for: .normal)
             ClockViewModel.model.startPlayingSound()
+            TimeCalculator.time.saveTime()
         }
         isRunning = !isRunning
         labelTime.isHidden = isRunning

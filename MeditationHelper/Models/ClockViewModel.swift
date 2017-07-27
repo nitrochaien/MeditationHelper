@@ -66,7 +66,6 @@ class ClockViewModel {
     }
     
     func getStringFrom(seconds: Int) -> String {
-        
         return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
     

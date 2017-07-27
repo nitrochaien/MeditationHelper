@@ -19,6 +19,7 @@
 		ED9371F81F26D76500615D20 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371F51F26D76500615D20 /* ClockViewController.swift */; };
 		ED9371FA1F26DA2000615D20 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371F91F26DA2000615D20 /* CircleView.swift */; };
 		ED9371FC1F26DB1B00615D20 /* clockticking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED9371FB1F26DB1B00615D20 /* clockticking.mp3 */; };
+		ED9833251F29E25E00C2E218 /* NotificationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9833241F29E25E00C2E218 /* NotificationUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		ED9371F51F26D76500615D20 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		ED9371F91F26DA2000615D20 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		ED9371FB1F26DB1B00615D20 /* clockticking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clockticking.mp3; sourceTree = "<group>"; };
+		ED9833241F29E25E00C2E218 /* NotificationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				ED0729EE1F29A18A00E41A67 /* TimeCalculator.swift */,
+				ED9833241F29E25E00C2E218 /* NotificationUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9833251F29E25E00C2E218 /* NotificationUtils.swift in Sources */,
 				ED9371FA1F26DA2000615D20 /* CircleView.swift in Sources */,
 				ED9371F81F26D76500615D20 /* ClockViewController.swift in Sources */,
 				ED9371C21F26D6A000615D20 /* AppDelegate.swift in Sources */,
