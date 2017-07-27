@@ -49,4 +49,8 @@ class NotificationUtils: NSObject {
             print("Something fishy happened")
         }
     }
+    
+    fileprivate func notificationWith(content: UNMutableNotificationContent, time: Date, identifier: String) {
+        let center = UNUserNotificationCenter.current()
+    }
 }
