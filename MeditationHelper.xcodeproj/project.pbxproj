@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0729EF1F29A18A00E41A67 /* TimeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0729EE1F29A18A00E41A67 /* TimeCalculator.swift */; };
+		ED0729F11F29A1CD00E41A67 /* ClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0729F01F29A1CD00E41A67 /* ClockViewModel.swift */; };
 		ED9371C21F26D6A000615D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C11F26D6A000615D20 /* AppDelegate.swift */; };
 		ED9371C71F26D6A000615D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9371C51F26D6A000615D20 /* Main.storyboard */; };
 		ED9371CA1F26D6A000615D20 /* MeditationHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C81F26D6A000615D20 /* MeditationHelper.xcdatamodeld */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED0729EE1F29A18A00E41A67 /* TimeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCalculator.swift; sourceTree = "<group>"; };
+		ED0729F01F29A1CD00E41A67 /* ClockViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewModel.swift; sourceTree = "<group>"; };
 		ED9371BE1F26D6A000615D20 /* MeditationHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9371C11F26D6A000615D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED9371C61F26D6A000615D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED0729ED1F29A0A700E41A67 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ED0729EE1F29A18A00E41A67 /* TimeCalculator.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		ED9371B51F26D6A000615D20 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 		ED9371C01F26D6A000615D20 /* MeditationHelper */ = {
 			isa = PBXGroup;
 			children = (
+				ED0729ED1F29A0A700E41A67 /* Utils */,
 				ED9371FB1F26DB1B00615D20 /* clockticking.mp3 */,
 				ED9371F41F26D76500615D20 /* Controllers */,
 				ED9371F61F26D76500615D20 /* Models */,
@@ -146,6 +159,7 @@
 		ED9371F61F26D76500615D20 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED0729F01F29A1CD00E41A67 /* ClockViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -297,6 +311,8 @@
 				ED9371F81F26D76500615D20 /* ClockViewController.swift in Sources */,
 				ED9371C21F26D6A000615D20 /* AppDelegate.swift in Sources */,
 				ED9371CA1F26D6A000615D20 /* MeditationHelper.xcdatamodeld in Sources */,
+				ED0729EF1F29A18A00E41A67 /* TimeCalculator.swift in Sources */,
+				ED0729F11F29A1CD00E41A67 /* ClockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +559,7 @@
 				ED9371EB1F26D6A000615D20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED9371EC1F26D6A000615D20 /* Build configuration list for PBXNativeTarget "MeditationHelperTests" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +568,7 @@
 				ED9371EE1F26D6A000615D20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED9371EF1F26D6A000615D20 /* Build configuration list for PBXNativeTarget "MeditationHelperUITests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +577,7 @@
 				ED9371F11F26D6A000615D20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
