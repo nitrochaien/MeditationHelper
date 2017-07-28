@@ -50,7 +50,28 @@ class NotificationUtils: NSObject {
         }
     }
     
-    fileprivate func notificationWith(content: UNMutableNotificationContent, time: Date, identifier: String) {
+    fileprivate func notificationWith(content: UNMutableNotificationContent, trigger: UNCalendarNotificationTrigger, identifier: String) {
+        //get alert permission
+        let options: UNAuthorizationOptions = [.alert, .sound]
+        //defines notification
         let center = UNUserNotificationCenter.current()
+        //request permission
+        center.requestAuthorization(options: options) { (granted, error) in
+            if !granted {
+                print("No notifying please")
+            }
+        }
+        //notify app when user change permission value
+        center.getNotificationSettings { (settings) in
+            if settings.authorizationStatus != .authorized {
+                print("No notifying please")
+            }
+        }
+        
+        //scheduling
+        let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+        center.add(request) { (error) in
+            print("Something fishy happened")
+        }
     }
 }
