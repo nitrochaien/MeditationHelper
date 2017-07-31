@@ -52,6 +52,7 @@ class ClockViewController: UIViewController {
             button.setTitle("Stop", for: .normal)
             ClockViewModel.model.startPlayingSound()
             TimeCalculator.time.saveTime()
+            NotificationUtils.notification.notifyUserDaily()
         }
         isRunning = !isRunning
         labelTime.isHidden = isRunning

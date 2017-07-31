@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TimeCalculator {
     var date: Date!
@@ -15,12 +16,28 @@ class TimeCalculator {
     
     func saveTime() {
         date = Date()
+        validListBeforeAdd()
         let context = AppDelegate.app.persistentContainer.viewContext
         let info = TimeInfo(context: context)
         info.date = date! as NSDate
+        
+        saveToUserDefaults()
     }
     
-    func getTime() {
+    func validListBeforeAdd() {
+        var info = [TimeInfo]()
+        let context = AppDelegate.app.persistentContainer.viewContext
+        do {
+            info = try context.fetch(TimeInfo.fetchRequest())
+            if info.count == 100 {
+                context.delete(info.first!)
+            }
+        } catch {
+            print("Fetch request failed!")
+        }
+    }
+    
+    func saveToUserDefaults() {
         var info = [TimeInfo]()
         let context = AppDelegate.app.persistentContainer.viewContext
         do {
