@@ -21,9 +21,7 @@ class ClockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            NotificationUtils.notification.notifyUserAfter(2)
-        }
+//        NotificationUtils.notification.notifyUserAfter(15)
         
         button.setTitle("Start", for: .normal)
         ClockViewModel.model.preparePlayer()

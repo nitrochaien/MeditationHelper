@@ -24,6 +24,16 @@ class NotificationUtils: NSObject {
         notificationWith(content: content, trigger: trigger, identifier: identifier)
     }
     
+    func notifyUserDailyTest() {
+        let content = createContent("Don't forget", body: "Start Medicating now!")
+        
+        var date = UserDefaults.standard.object(forKey: "NOTIFY_TIME") as? Date ?? Date()
+        date = date.addingTimeInterval(15)
+        let trigger = notifyDailyAt(date: date)
+        
+        notificationWith(content: content, trigger: trigger, identifier: identifier)
+    }
+    
     func notifyUserAfter(_ time: TimeInterval) {
         let content = createContent("Don't forget", body: "Start Medicating now!")
         let trigger = notifyAfter(timeInterval: time)
@@ -44,7 +54,7 @@ class NotificationUtils: NSObject {
     func notifyDailyAt(date: Date) -> UNCalendarNotificationTrigger {
         let triggerDate = date
         let triggerDaily = Calendar.current.dateComponents([.hour, .minute, .second], from: triggerDate)
-        let trigger = UNCalendarNotificationTrigger.init(dateMatching: triggerDaily, repeats: false)
+        let trigger = UNCalendarNotificationTrigger.init(dateMatching: triggerDaily, repeats: true)
         
         return trigger
     }
