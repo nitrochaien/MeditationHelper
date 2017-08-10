@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED0729EF1F29A18A00E41A67 /* TimeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0729EE1F29A18A00E41A67 /* TimeCalculator.swift */; };
 		ED0729F11F29A1CD00E41A67 /* ClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0729F01F29A1CD00E41A67 /* ClockViewModel.swift */; };
+		ED7961491F3C0FC000BAC81B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7961481F3C0FC000BAC81B /* SettingsController.swift */; };
 		ED9371C21F26D6A000615D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C11F26D6A000615D20 /* AppDelegate.swift */; };
 		ED9371C71F26D6A000615D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9371C51F26D6A000615D20 /* Main.storyboard */; };
 		ED9371CA1F26D6A000615D20 /* MeditationHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED9371C81F26D6A000615D20 /* MeditationHelper.xcdatamodeld */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		ED0729EE1F29A18A00E41A67 /* TimeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCalculator.swift; sourceTree = "<group>"; };
 		ED0729F01F29A1CD00E41A67 /* ClockViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewModel.swift; sourceTree = "<group>"; };
+		ED7961481F3C0FC000BAC81B /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		ED9371BE1F26D6A000615D20 /* MeditationHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9371C11F26D6A000615D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED9371C61F26D6A000615D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				ED9371F51F26D76500615D20 /* ClockViewController.swift */,
+				ED7961481F3C0FC000BAC81B /* SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED7961491F3C0FC000BAC81B /* SettingsController.swift in Sources */,
 				ED9833251F29E25E00C2E218 /* NotificationUtils.swift in Sources */,
 				ED9371FA1F26DA2000615D20 /* CircleView.swift in Sources */,
 				ED9371F81F26D76500615D20 /* ClockViewController.swift in Sources */,
