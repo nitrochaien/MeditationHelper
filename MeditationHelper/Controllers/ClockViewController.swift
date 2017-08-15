@@ -11,121 +11,100 @@ import AVFoundation
 
 class ClockViewController: UIViewController {
 
-    var player: AVAudioPlayer?
-    var isRunning = false
-    var timer: Timer?
-    var timeCount = 0
     @IBOutlet var button: UIButton!
     @IBOutlet var contentView: UIView!
     @IBOutlet var labelTime: UILabel!
     
-    var circleView: CircleView?
+    var navBarHairlineImageView: UIImageView!
     
-    override func viewDidLoad()
-    {
+    var circleView: CircleView?
+    var isRunning = false
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
+        edgesForExtendedLayout = []
+        navBarHairlineImageView = findHairlineImageViewUnder(view: (self.navigationController?.navigationBar)!)
         
         button.setTitle("Start", for: .normal)
+        ClockViewModel.model.preparePlayer()
         
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
-            print("AVAudioSession Category Playback OK")
-            do {
-                try AVAudioSession.sharedInstance().setActive(true)
-                print("AVAudioSession is Active")
-            } catch {
-                print(error)
-            }
-        } catch {
-            print(error)
-        }
-        
-        playSound()
+        customNavigation()
     }
     
-    override func viewDidAppear(_ animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
+        super.viewWillAppear(animated)
+        navBarHairlineImageView?.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        navBarHairlineImageView?.isHidden = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         reloadView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeView), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTimer), name: ClockViewModel.updateTimer, object: nil)
     }
     
-    func playSound() {
-        let url = Bundle.main.url(forResource: "clockticking", withExtension: "mp3")!
-        
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
-            
-            player.prepareToPlay()
-        } catch let error {
-            print(error.localizedDescription)
-        }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.removeObserver(self, name: ClockViewModel.updateTimer, object: nil)
     }
     
-    @IBAction func onClick(_ sender: Any)
-    {
-        //is running
-        if isRunning
-        {
+    func customNavigation() {
+        let settingsButton = UIBarButtonItem.init(title: "Settings", style: .plain, target: self, action: #selector(goToSettings))
+        navigationItem.rightBarButtonItem = settingsButton
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
+    @IBAction func onClick(_ sender: Any) {
+        if isRunning {
             button.setTitle("Start", for: .normal)
-            timer?.invalidate()
-            player?.stop()
-            showTime()
-            refreshTime()
-        }
-        else
-        {
+            ClockViewModel.model.stopPlayingSound()
+            labelTime.isHidden = false
+        } else {
             button.setTitle("Stop", for: .normal)
-            if #available(iOS 10.0, *) {
-                self.player?.play()
-                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
-                    self.player?.play()
-                    self.timeCount += 1
-                })
+            ClockViewModel.model.startPlayingSound()
+            TimeCalculator.time.saveTime()
+            if let isHideTimer = UserDefaults.standard.object(forKey: "IsHideTimer") as? Bool {
+                labelTime.isHidden = isHideTimer
+                print("Has userstandard value")
             } else {
-                
+                labelTime.isHidden = false
+                print("Not have userstandard value")
             }
         }
         isRunning = !isRunning
-        labelTime.isHidden = isRunning
     }
     
-    func showTime() {
-        timePassed(completion: { hours, minutes, seconds in
-            let hours = self.getStringFrom(seconds: hours)
-            let minutes = self.getStringFrom(seconds: minutes)
-            let seconds = self.getStringFrom(seconds: seconds)
-            
-            self.labelTime.text = "Time passed: \(hours):\(minutes):\(seconds)"
-        })
+    func updateTimer() {
+        labelTime.text = ClockViewModel.model.timeEllapsed()
     }
     
-    func timePassed(completion: @escaping (_ hours: Int, _ minutes: Int, _ seconds: Int)->()) {
-        completion(self.timeCount / 3600, (self.timeCount % 3600) / 60, (self.timeCount % 3600) % 60)
-    }
-    
-    func getStringFrom(seconds: Int) -> String {
-        
-        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
-    }
-    
-    func refreshTime() {
-        timeCount = 0
-    }
-    
-    func reloadView()
-    {
+    func reloadView() {
         circleView = CircleView(frame: CGRect.init(x: 0, y: 0, width: contentView.bounds.width, height: contentView.bounds.height))
         contentView.addSubview(circleView!)
     }
     
-    func removeView()
-    {
+    func removeView() {
         circleView?.removeFromSuperview()
         circleView = nil
+    }
+    
+    func goToSettings() {
+        guard !isRunning else {
+            alert(message: "Please stop medicating first!")
+            return
+        }
+        let settingsController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsController")
+        navigationController?.pushViewController(settingsController, animated: true)
     }
 }
