@@ -101,7 +101,7 @@ class ClockViewController: UIViewController {
     
     func goToSettings() {
         guard !isRunning else {
-            alert(message: "Please stop medicating first!")
+            alert(message: "Please stop meditating first!")
             return
         }
         let settingsController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsController")
