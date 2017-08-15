@@ -91,6 +91,21 @@ class ClockViewModel {
         } else {
             
         }
-
+    }
+    
+    func adjustVolume(_ value: CGFloat) {
+        if (self.player?.volume)! < Float.init(0) {
+            self.player?.volume = 0
+            return
+        } else if (self.player?.volume)! > Float.init(1) {
+            self.player?.volume = 1
+            return
+        }
+        print("volume: \(String(describing: self.player?.volume))")
+        if value > 0 {
+            self.player?.volume -= 0.02
+        } else {
+            self.player?.volume += 0.02
+        }
     }
 }
