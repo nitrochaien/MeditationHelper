@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 import AVFoundation
 
 class ClockViewController: UIViewController {
@@ -29,6 +30,7 @@ class ClockViewController: UIViewController {
         ClockViewModel.model.preparePlayer()
         
         customNavigation()
+        addGesture()
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -63,6 +65,16 @@ class ClockViewController: UIViewController {
         let settingsButton = UIBarButtonItem.init(title: "Settings", style: .plain, target: self, action: #selector(goToSettings))
         navigationItem.rightBarButtonItem = settingsButton
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
+    func addGesture() {
+        let pan = UIPanGestureRecognizer.init(target: self, action: #selector(handlePanGesture))
+        view.addGestureRecognizer(pan)
+    }
+    
+    func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        let y = gesture.velocity(in: view).y
+        ClockViewModel.model.adjustVolume(y)
     }
     
     @IBAction func onClick(_ sender: Any) {
