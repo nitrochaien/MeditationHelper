@@ -15,16 +15,32 @@ class ClockViewController: UIViewController {
     @IBOutlet var contentView: UIView!
     @IBOutlet var labelTime: UILabel!
     
+    var navBarHairlineImageView: UIImageView!
+    
     var circleView: CircleView?
     var isRunning = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        NotificationUtils.notification.notifyUserAfter(15)
+        edgesForExtendedLayout = []
+        navBarHairlineImageView = findHairlineImageViewUnder(view: (self.navigationController?.navigationBar)!)
         
         button.setTitle("Start", for: .normal)
         ClockViewModel.model.preparePlayer()
+        
+        customNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        navBarHairlineImageView?.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        navBarHairlineImageView?.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,28 +50,43 @@ class ClockViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeView), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTimer), name: ClockViewModel.updateTimer, object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.removeObserver(self, name: ClockViewModel.updateTimer, object: nil)
+    }
+    
+    func customNavigation() {
+        let settingsButton = UIBarButtonItem.init(title: "Settings", style: .plain, target: self, action: #selector(goToSettings))
+        navigationItem.rightBarButtonItem = settingsButton
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     @IBAction func onClick(_ sender: Any) {
-        //is running
         if isRunning {
             button.setTitle("Start", for: .normal)
             ClockViewModel.model.stopPlayingSound()
-            labelTime.text = ClockViewModel.model.timeEllapsed()
-            ClockViewModel.model.refreshTimer()
+            labelTime.isHidden = false
         } else {
             button.setTitle("Stop", for: .normal)
             ClockViewModel.model.startPlayingSound()
             TimeCalculator.time.saveTime()
-            NotificationUtils.notification.notifyUserDaily()
+            if let isHideTimer = UserDefaults.standard.object(forKey: "IsHideTimer") as? Bool {
+                labelTime.isHidden = isHideTimer
+                print("Has userstandard value")
+            } else {
+                labelTime.isHidden = false
+                print("Not have userstandard value")
+            }
         }
         isRunning = !isRunning
-        labelTime.isHidden = isRunning
+    }
+    
+    func updateTimer() {
+        labelTime.text = ClockViewModel.model.timeEllapsed()
     }
     
     func reloadView() {
@@ -66,5 +97,14 @@ class ClockViewController: UIViewController {
     func removeView() {
         circleView?.removeFromSuperview()
         circleView = nil
+    }
+    
+    func goToSettings() {
+        guard !isRunning else {
+            alert(message: "Please stop medicating first!")
+            return
+        }
+        let settingsController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsController")
+        navigationController?.pushViewController(settingsController, animated: true)
     }
 }

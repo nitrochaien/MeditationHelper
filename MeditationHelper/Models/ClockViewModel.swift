@@ -15,6 +15,7 @@ class ClockViewModel {
     var timeCount = 0
     
     static let model = ClockViewModel()
+    static let updateTimer = Notification.Name("updateTimer")
     
     func preparePlayer() {
         prepareAudioSession()
@@ -76,6 +77,7 @@ class ClockViewModel {
     func stopPlayingSound() {
         timer?.invalidate()
         player?.stop()
+        refreshTimer()
     }
     
     func startPlayingSound() {
@@ -84,6 +86,7 @@ class ClockViewModel {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
                 self.player?.play()
                 self.timeCount += 1
+                NotificationCenter.default.post(name: ClockViewModel.updateTimer, object: nil, userInfo: nil)
             })
         } else {
             

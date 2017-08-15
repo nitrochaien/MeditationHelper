@@ -112,4 +112,10 @@ class NotificationUtils: NSObject {
             print("Error: \(String(describing: error))")
         }
     }
+    
+    func removeAllNotications() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+    }
 }
