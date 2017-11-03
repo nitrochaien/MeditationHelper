@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,25 +38,66 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-NY-4Q4">
-                                <rect key="frame" x="164" y="497" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="140" y="497" width="94" height="30"/>
+                                <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K4W-rX-aX3"/>
+                                    <action selector="onClickStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D9m-vK-3eW"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jY-04-5qR">
+                                <rect key="frame" x="62" y="497" width="250" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYN-bc-S0u">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                        <state key="normal" title="Stop">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClickStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Uf-IH-URW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcy-1D-QGH">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                        <state key="normal" title="Pause">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClickPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lFZ-BH-x08"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Bcy-1D-QGH" firstAttribute="width" secondItem="8jY-04-5qR" secondAttribute="width" multiplier="1:2" id="1EN-Fl-b4h"/>
+                                    <constraint firstItem="Bcy-1D-QGH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8jY-04-5qR" secondAttribute="leading" constant="20" symbolic="YES" id="87f-l8-m6F"/>
+                                    <constraint firstItem="LYN-bc-S0u" firstAttribute="leading" secondItem="8jY-04-5qR" secondAttribute="leading" id="8he-FY-nCv"/>
+                                    <constraint firstAttribute="bottom" secondItem="LYN-bc-S0u" secondAttribute="bottom" id="MzY-Cq-qw3"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bcy-1D-QGH" secondAttribute="bottom" id="QRO-fk-2nu"/>
+                                    <constraint firstItem="Bcy-1D-QGH" firstAttribute="top" secondItem="8jY-04-5qR" secondAttribute="top" id="W14-Og-2NR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bcy-1D-QGH" secondAttribute="trailing" id="bh7-sk-dCW"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LYN-bc-S0u" secondAttribute="trailing" constant="20" symbolic="YES" id="er1-Ii-0Uo"/>
+                                    <constraint firstItem="LYN-bc-S0u" firstAttribute="width" secondItem="8jY-04-5qR" secondAttribute="width" multiplier="1:2" id="fWG-IV-w3u"/>
+                                    <constraint firstItem="LYN-bc-S0u" firstAttribute="top" secondItem="8jY-04-5qR" secondAttribute="top" id="mkg-1T-Qv8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8jY-04-5qR" firstAttribute="centerX" secondItem="9UU-NY-4Q4" secondAttribute="centerX" id="4iV-Ev-LDz"/>
                             <constraint firstItem="9Nt-A3-6Zz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7Ve-Kg-yoS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Nt-A3-6Zz" secondAttribute="trailing" constant="8" id="8Rp-jb-pzj"/>
                             <constraint firstItem="9UU-NY-4Q4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GaV-mc-ID8"/>
                             <constraint firstItem="yab-0J-Bcl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="L3i-YQ-9nO"/>
+                            <constraint firstItem="9UU-NY-4Q4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="N7X-1g-iSk"/>
                             <constraint firstItem="yab-0J-Bcl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="16" id="acj-ZH-c32"/>
                             <constraint firstItem="9UU-NY-4Q4" firstAttribute="top" secondItem="9Nt-A3-6Zz" secondAttribute="bottom" constant="32" id="bPb-Hk-aw5"/>
                             <constraint firstItem="9Nt-A3-6Zz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="gJy-5M-3X3"/>
                             <constraint firstItem="9Nt-A3-6Zz" firstAttribute="top" secondItem="yab-0J-Bcl" secondAttribute="bottom" constant="8" id="hT7-LB-LcI"/>
+                            <constraint firstItem="8jY-04-5qR" firstAttribute="bottom" secondItem="9UU-NY-4Q4" secondAttribute="bottom" id="iLj-uq-x2Q"/>
+                            <constraint firstItem="8jY-04-5qR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="2:3" id="iTb-wn-hjS"/>
+                            <constraint firstItem="8jY-04-5qR" firstAttribute="top" secondItem="9UU-NY-4Q4" secondAttribute="top" id="lMi-yA-5cG"/>
                             <constraint firstAttribute="trailing" secondItem="yab-0J-Bcl" secondAttribute="trailing" constant="8" id="uc5-xe-xwN"/>
                         </constraints>
                     </view>
@@ -63,10 +105,12 @@
                     <navigationItem key="navigationItem" id="S9r-ZA-7tE"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="button" destination="9UU-NY-4Q4" id="BKj-pe-KZP"/>
+                        <outlet property="btnPause" destination="Bcy-1D-QGH" id="Hcw-eX-RCO"/>
+                        <outlet property="btnStart" destination="9UU-NY-4Q4" id="KDl-zm-WVf"/>
                         <outlet property="circleView" destination="9Nt-A3-6Zz" id="ujG-i1-H56"/>
                         <outlet property="contentView" destination="9Nt-A3-6Zz" id="XFu-VD-Hxg"/>
                         <outlet property="labelTime" destination="yab-0J-Bcl" id="cV2-P5-DJq"/>
+                        <outlet property="viewStop" destination="8jY-04-5qR" id="MKL-ta-sZF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

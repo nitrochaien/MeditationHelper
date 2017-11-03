@@ -8,7 +8,7 @@
 
 import UIKit
 
-let pi:CGFloat = CGFloat(M_PI)
+let pi:CGFloat = CGFloat(Double.pi)
 
 enum NumberOfNumerals:Int
 {

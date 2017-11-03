@@ -85,6 +85,12 @@ class ClockViewModel {
         refreshTimer()
     }
     
+    func pausePlayingSound()
+    {
+        self.player?.pause()
+        timer?.invalidate()
+    }
+    
     func startPlayingSound() {
         if #available(iOS 10.0, *) {
             self.player?.play()

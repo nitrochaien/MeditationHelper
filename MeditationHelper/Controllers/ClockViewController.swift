@@ -12,25 +12,29 @@ import AVFoundation
 
 class ClockViewController: UIViewController {
 
-    @IBOutlet var button: UIButton!
+    @IBOutlet var btnStart: UIButton!
     @IBOutlet var contentView: UIView!
     @IBOutlet var labelTime: UILabel!
+    @IBOutlet weak var viewStop: UIView!
+    @IBOutlet weak var btnPause: UIButton!
     
     var navBarHairlineImageView: UIImageView!
     
     var circleView: CircleView?
-    var isRunning = false
+    var state: State!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = []
         navBarHairlineImageView = findHairlineImageViewUnder(view: (self.navigationController?.navigationBar)!)
         
-        button.setTitle("Start", for: .normal)
+        btnStart.setTitle("Start", for: .normal)
         ClockViewModel.model.preparePlayer()
         
         customNavigation()
         addGesture()
+        
+        state = .stopped
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -88,24 +92,31 @@ class ClockViewController: UIViewController {
         ClockViewModel.model.adjustVolume(y)
     }
     
-    @IBAction func onClick(_ sender: Any) {
-        if isRunning {
-            button.setTitle("Start", for: .normal)
-            ClockViewModel.model.stopPlayingSound()
-            labelTime.isHidden = false
+    fileprivate func showViewStop() {
+        btnStart.isHidden = true
+        viewStop.isHidden = false
+        view.bringSubview(toFront: viewStop)
+    }
+    
+    fileprivate func updateUIWhenStartPlayingSound() {
+        if let isHideTimer = UserDefaults.standard.object(forKey: "IsHideTimer") as? Bool {
+            labelTime.isHidden = isHideTimer
         } else {
-            button.setTitle("Stop", for: .normal)
-            ClockViewModel.model.startPlayingSound()
-            TimeCalculator.time.saveTime()
-            if let isHideTimer = UserDefaults.standard.object(forKey: "IsHideTimer") as? Bool {
-                labelTime.isHidden = isHideTimer
-                print("Has userstandard value")
-            } else {
-                labelTime.isHidden = false
-                print("Not have userstandard value")
-            }
+            labelTime.isHidden = false
         }
-        isRunning = !isRunning
+        
+        showViewStop()
+    }
+    
+    fileprivate func hideViewStop() {
+        btnStart.isHidden = false
+        viewStop.isHidden = true
+        view.bringSubview(toFront: btnStart)
+    }
+    
+    fileprivate func updateUIWhenStopPlayingSound() {
+        labelTime.isHidden = false
+        hideViewStop()
     }
     
     func updateTimer() {
@@ -123,11 +134,42 @@ class ClockViewController: UIViewController {
     }
     
     func goToSettings() {
-        guard !isRunning else {
+        guard state == .stopped else {
             alert(message: "Please stop meditating first!")
             return
         }
         let settingsController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsController")
         navigationController?.pushViewController(settingsController, animated: true)
+    }
+    
+    @IBAction func onClickStop(_ sender: Any)
+    {
+        state = .stopped
+        ClockViewModel.model.stopPlayingSound()
+        updateUIWhenStopPlayingSound()
+    }
+    
+    @IBAction func onClickPause(_ sender: Any)
+    {
+        if state == .medicating
+        {
+            state = .paused
+            ClockViewModel.model.pausePlayingSound()
+            btnPause.setTitle("Continue", for: .normal)
+        }
+        else if state == .paused
+        {
+            state = .medicating
+            ClockViewModel.model.startPlayingSound()
+            updateUIWhenStartPlayingSound()
+            btnPause.setTitle("Pause", for: .normal)
+        }
+    }
+    
+    @IBAction func onClickStart(_ sender: Any) {
+        state = .medicating
+        ClockViewModel.model.startPlayingSound()
+        TimeCalculator.time.saveTime()
+        updateUIWhenStartPlayingSound()
     }
 }
