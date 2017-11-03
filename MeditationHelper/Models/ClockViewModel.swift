@@ -38,12 +38,17 @@ class ClockViewModel {
     }
     
     func prepareToPlay() {
-        let url = Bundle.main.url(forResource: "clockticking", withExtension: "mp3")!
+        let url = Bundle.main.url(forResource: "clockticking_with_silence", withExtension: "mp3")!
         
         do {
             player = try AVAudioPlayer(contentsOf: url)
             guard let player = player else { return }
             
+            try AVAudioSession.sharedInstance().setCategory("AVAudioSessionCategoryPlayback")
+            try AVAudioSession.sharedInstance().setActive(true)
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+            
+            player.numberOfLoops = -1
             player.prepareToPlay()
         } catch let error {
             print(error.localizedDescription)
@@ -84,8 +89,8 @@ class ClockViewModel {
         if #available(iOS 10.0, *) {
             self.player?.play()
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
-                self.player?.play()
                 self.timeCount += 1
+                print("Time count: ", self.timeCount)
                 NotificationCenter.default.post(name: ClockViewModel.updateTimer, object: nil, userInfo: nil)
             })
         } else {
@@ -103,9 +108,9 @@ class ClockViewModel {
         }
         print("volume: \(String(describing: self.player?.volume))")
         if value > 0 {
-            self.player?.volume -= 0.02
+            self.player?.volume -= 0.01
         } else {
-            self.player?.volume += 0.02
+            self.player?.volume += 0.01
         }
     }
 }

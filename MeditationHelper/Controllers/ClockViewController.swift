@@ -53,6 +53,17 @@ class ClockViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeView), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTimer), name: ClockViewModel.updateTimer, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onFontChange), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
+    }
+    
+    func onFontChange()
+    {
+        print("Changed font")
+        let pointSize  = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body).pointSize
+        let customFont = UIFont(name: "HelveticaNeue", size: pointSize)
+        
+        labelTime.font = customFont
     }
     
     deinit {
