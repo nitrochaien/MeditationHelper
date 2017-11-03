@@ -1,0 +1,1 @@
+- Create new branch with format issue/<issue_number>_<dev_name>
