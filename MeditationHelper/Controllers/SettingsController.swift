@@ -13,6 +13,7 @@ class SettingsController: UIViewController {
     @IBOutlet weak var notificationSwitch: UISwitch!
     @IBOutlet weak var stayAwakeSwitch: UISwitch!
     @IBOutlet weak var timerSwitch: UISwitch!
+    @IBOutlet weak var soundSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class SettingsController: UIViewController {
         notificationSwitch.addTarget(self, action: #selector(handleNotificationChanged), for: .valueChanged)
         stayAwakeSwitch.addTarget(self, action: #selector(handleStayAwakeOptionChanged), for: .valueChanged)
         timerSwitch.addTarget(self, action: #selector(handleTimerOptionChanged), for: .valueChanged)
+        soundSwitch.addTarget(self, action: #selector(handleSoundSwitch), for: .valueChanged)
         
         preSet()
     }
@@ -48,6 +50,14 @@ class SettingsController: UIViewController {
             timerSwitch.isOn = false
             print("Not have userstandard value")
         }
+        
+        if let isHideTimer = UserDefaults.standard.object(forKey: "IsSoundEnable") as? Bool {
+            soundSwitch.isOn = isHideTimer
+            print("Has userstandard value")
+        } else {
+            soundSwitch.isOn = false
+            print("Not have userstandard value")
+        }
     }
     
     func handleNotificationChanged(_ switcher: UISwitch) {
@@ -62,5 +72,9 @@ class SettingsController: UIViewController {
     
     func handleTimerOptionChanged(_ switcher: UISwitch) {
         UserDefaults.standard.set(switcher.isOn, forKey: "IsHideTimer")
+    }
+    
+    func handleSoundSwitch(_ switcher: UISwitch) {
+        UserDefaults.standard.set(switcher.isOn, forKey: "IsSoundEnable")
     }
 }

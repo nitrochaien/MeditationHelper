@@ -34,6 +34,8 @@ class ClockViewController: UIViewController {
         customNavigation()
         addGesture()
         
+        handleSound()
+        
         state = .stopped
     }
     
@@ -105,7 +107,20 @@ class ClockViewController: UIViewController {
             labelTime.isHidden = false
         }
         
+        handleSound()
         showViewStop()
+    }
+    
+    fileprivate func handleSound() {
+        if let enableSound = UserDefaults.standard.object(forKey: "IsSoundEnable") as? Bool {
+            if enableSound {
+                ClockViewModel.model.enableSound()
+            } else {
+                ClockViewModel.model.mute()
+            }
+        } else {
+            ClockViewModel.model.mute()
+        }
     }
     
     fileprivate func hideViewStop() {

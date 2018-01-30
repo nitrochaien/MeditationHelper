@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sCL-6w-Hfs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sCL-6w-Hfs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -201,15 +201,42 @@
                                     <constraint firstItem="Hwl-VB-NVE" firstAttribute="top" secondItem="1QU-E5-Set" secondAttribute="top" id="rNE-4A-qgc"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJG-iH-7g2">
+                                <rect key="frame" x="16" y="169" width="343" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="H83-CO-SdS">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F49-Im-SyZ">
+                                        <rect key="frame" x="294" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="H83-CO-SdS" firstAttribute="top" secondItem="iJG-iH-7g2" secondAttribute="top" id="0ty-RN-7hL"/>
+                                    <constraint firstItem="H83-CO-SdS" firstAttribute="leading" secondItem="iJG-iH-7g2" secondAttribute="leading" id="Arv-jA-mob"/>
+                                    <constraint firstItem="F49-Im-SyZ" firstAttribute="top" secondItem="iJG-iH-7g2" secondAttribute="top" id="CAz-80-ihS"/>
+                                    <constraint firstAttribute="bottom" secondItem="F49-Im-SyZ" secondAttribute="bottom" id="hT3-TZ-hx3"/>
+                                    <constraint firstItem="F49-Im-SyZ" firstAttribute="leading" secondItem="H83-CO-SdS" secondAttribute="trailing" constant="8" id="mT4-yQ-GJO"/>
+                                    <constraint firstAttribute="bottom" secondItem="H83-CO-SdS" secondAttribute="bottom" id="uaW-vK-3Wf"/>
+                                    <constraint firstAttribute="trailing" secondItem="F49-Im-SyZ" secondAttribute="trailing" id="xMK-28-MMp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="P4S-5m-5nj" firstAttribute="trailing" secondItem="gDz-EH-P6E" secondAttribute="trailingMargin" id="0U0-Fx-KHg"/>
                             <constraint firstItem="P4S-5m-5nj" firstAttribute="top" secondItem="DyQ-Br-94N" secondAttribute="bottom" constant="16" id="2ac-m7-0LJ"/>
+                            <constraint firstItem="iJG-iH-7g2" firstAttribute="top" secondItem="1QU-E5-Set" secondAttribute="bottom" constant="16" id="6Tp-pI-Dyu"/>
                             <constraint firstItem="P4S-5m-5nj" firstAttribute="leading" secondItem="gDz-EH-P6E" secondAttribute="leadingMargin" id="8TO-1f-g9P"/>
                             <constraint firstItem="1QU-E5-Set" firstAttribute="top" secondItem="P4S-5m-5nj" secondAttribute="bottom" constant="16" id="FOJ-qj-aUc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iJG-iH-7g2" secondAttribute="trailing" id="Nb1-GC-qyc"/>
                             <constraint firstItem="DyQ-Br-94N" firstAttribute="top" secondItem="tT1-RO-3Zh" secondAttribute="bottom" constant="8" id="PFN-JM-CKK"/>
                             <constraint firstItem="1QU-E5-Set" firstAttribute="trailing" secondItem="gDz-EH-P6E" secondAttribute="trailingMargin" id="RqP-j5-KWp"/>
+                            <constraint firstItem="iJG-iH-7g2" firstAttribute="leading" secondItem="gDz-EH-P6E" secondAttribute="leadingMargin" id="TOZ-a0-9o3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DyQ-Br-94N" secondAttribute="trailing" id="XoC-vB-zs7"/>
                             <constraint firstItem="DyQ-Br-94N" firstAttribute="leading" secondItem="gDz-EH-P6E" secondAttribute="leadingMargin" id="aIu-FY-8j1"/>
                             <constraint firstItem="1QU-E5-Set" firstAttribute="leading" secondItem="gDz-EH-P6E" secondAttribute="leadingMargin" id="t5t-Oh-JzB"/>
@@ -217,6 +244,7 @@
                     </view>
                     <connections>
                         <outlet property="notificationSwitch" destination="9KQ-v2-PXy" id="r81-2G-lJX"/>
+                        <outlet property="soundSwitch" destination="F49-Im-SyZ" id="YZQ-si-azG"/>
                         <outlet property="stayAwakeSwitch" destination="kLG-Jy-dZO" id="Cpq-sy-pnO"/>
                         <outlet property="timerSwitch" destination="Hwl-VB-NVE" id="Nzc-Rh-ra0"/>
                     </connections>

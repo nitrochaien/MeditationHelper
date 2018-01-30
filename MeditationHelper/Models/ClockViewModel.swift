@@ -119,4 +119,12 @@ class ClockViewModel {
             self.player?.volume += 0.01
         }
     }
+    
+    func mute() {
+        self.player?.volume = 0
+    }
+    
+    func enableSound() {
+        self.player?.volume = 1
+    }
 }
